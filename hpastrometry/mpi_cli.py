@@ -15,14 +15,11 @@ except ImportError:
 from .astrometry import run_hpastrometry
 
 def chunk_list(data_list, num_chunks):
-    """Splits a list into roughly equal chunks."""
-    avg = len(data_list) / float(num_chunks)
-    out = []
-    last = 0.0
-    while last < len(data_list):
-        out.append(data_list[int(last):int(last + avg)])
-        last += avg
-    return out
+    """
+    Splits a list into exactly num_chunks partitions using integer math.
+    """
+    k, m = divmod(len(data_list), num_chunks)
+    return [data_list[i * k + min(i, m):(i + 1) * k + min(i + 1, m)] for i in range(num_chunks)]
 
 def main():
     # --- MPI Setup ---

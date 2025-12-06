@@ -18,7 +18,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Jiewei Zhao',  # Replace with your name
     author_email='meow.jiewei.zhao@gmail.com', # Replace with your email
-    url='https://github.com/yourusername/hpastrometry', # Replace with your URL
+    url='https://github.com/Jiewei-Zhao/hpastrometry', # Replace with your URL
     packages=find_packages(),
     
     # Critical: This ensures the 'config' folder (.cfg, .param, etc.) is included in the installation
